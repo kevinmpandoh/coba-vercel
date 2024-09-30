@@ -1,4 +1,6 @@
 const form = document.querySelector("form");
+// ambil element html tag dan tambahkan style --color-text dan --color-background warna pink
+let root = document.documentElement;
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -6,21 +8,20 @@ form.addEventListener("submit", function (e) {
   const skill = document.querySelector("#skill");
   const value = skill.value;
   console.log(value);
+  let root = document.documentElement;
+  root.style.setProperty("--color", "red");
 
   let footer = document.querySelector("footer");
   let header = document.querySelector("header");
   let h2 = document.querySelectorAll("h2");
-  let root = document.documentElement;
 
   //   Ubah warna
   if (value === "HTML") {
-    // header.style.backgroundColor = "red";
-    // footer.style.backgroundColor = "red";
-    // for (let i = 0; i < h2.length; i++) {
-    //   h2[i].style.color = "red";
-    // }
-    root.style.setProperty("--text-color", "pink");
-    root.style.setProperty("--primary-color", "black");
+    header.style.backgroundColor = "red";
+    footer.style.backgroundColor = "red";
+    for (let i = 0; i < h2.length; i++) {
+      h2[i].style.color = "red";
+    }
   } else if (value === "CSS") {
     header.style.backgroundColor = "blue";
     footer.style.backgroundColor = "blue";
